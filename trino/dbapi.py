@@ -126,6 +126,7 @@ class Connection(object):
             self._http_session = http_session
         self.http_headers = http_headers
         self.http_scheme = http_scheme
+        # parse from class name to name
         self.auth = auth
         self.extra_credential = extra_credential
         self.redirect_handler = redirect_handler

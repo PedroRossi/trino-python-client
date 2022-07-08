@@ -429,3 +429,10 @@ class CertificateAuthentication(Authentication):
         if not isinstance(other, CertificateAuthentication):
             return False
         return self._cert == other._cert and self._key == other._key
+
+
+def parse_auth_if_str(auth):
+    if type(auth) == str:
+        if auth == OAuth2Authentication.__name__:
+            return OAuth2Authentication()
+    return auth
